@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kronometre</string>
+    <string name="start">Başlat</string>
+    <string name="stop">Durdur</string>
+    <string name="reset">Sıfırla</string>
+    <string name="full_screen">Tam Ekran</string>
+    <string name="continuee">Sürdür</string>
+</resources>
