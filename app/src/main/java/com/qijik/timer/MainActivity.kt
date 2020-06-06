@@ -94,11 +94,13 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if(isFullScreen==true)
         {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN
-
-            )
+//            window.setFlags(
+//                WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN
+//
+//            )
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
             getSupportActionBar()?.show();
             isFullScreen=false
         }
@@ -113,10 +115,12 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.getItemId()
         if (id == R.id.full_screen) {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
+//            window.setFlags(
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN
+//            )
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
             getSupportActionBar()?.hide();
             isFullScreen=true
             return true
