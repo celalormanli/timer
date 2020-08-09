@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.drawable.main_background))
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         var minute:TextView=findViewById(R.id.minute)
         var second:TextView=findViewById(R.id.second)
         var btnReset:Button=findViewById(R.id.btnReset)
